@@ -5,7 +5,8 @@ export const ContactSection = () => {
   return (
     <motion.section
       id="contact"
-      className="min-h-screen  flex flex-col items-center justify-center pt-20 px-4 bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100"
+      className="min-h-screen  flex flex-col items-center justify-center pt-20 px-4
+       bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 border-t-5 border-zinc-300" 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

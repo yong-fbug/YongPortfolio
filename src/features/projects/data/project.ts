@@ -1,10 +1,14 @@
+import pmsImage from "../img/pms/pms.jpg";
+import sampleImg from "../img/pms/ewan.jpg";
 
 export interface Project {
   id: number;
   title: string;
   description: string;
-  imgSrc: string;
+  imgSrc: string; //cover
+  images?: string[];
   content: string;
+  className?: string;
 }
 
 export const projects: Project[] = [
@@ -12,16 +16,21 @@ export const projects: Project[] = [
     id: 1,
     title: 'Pabook',
     description: 'A web application integrating Internet of Things (IoT) technology to automate and streamline the parking process.',
-    imgSrc: "/images/project1.jpg",
-    content: "Development of a web-based intelligent parking management system with online booking designed for the City of Malabon University, improving parking efficiency and user convenience."
+    imgSrc: pmsImage,
+    images: [
+      sampleImg,
+    ],
+    content: "Development of a web-based intelligent parking management system with online booking designed for the City of Malabon University, improving parking efficiency and user convenience.",
+    className: "border-blue-400 shadow-blue-300 h-10",
   },
 
   {
     id: 2,
     title: 'Daily Ticket Report',
     description: 'A ticket tracking Report vizualize, anaylze and tracks ticket within a day or weekly.',
-    imgSrc: "/images/project1.jpg",
+    imgSrc: "",
     content: "Details about project..",
+    
   },
   {
     id: 3,

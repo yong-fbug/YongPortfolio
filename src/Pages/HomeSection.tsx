@@ -31,7 +31,7 @@ export const HomeSection = () => {
             document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth"});
           }}
           
-          className="inline-block px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-black 
+          className="inline-block px-6 py-3 mb-5 bg-zinc-900 dark:bg-white text-white dark:text-black 
           rounded-lg font-medium hover:opacity-90 transition duration-300"
         >
           View Projects
