@@ -7,6 +7,7 @@ import { AboutSection } from "./Pages/AboutSection";
 import { ProjectsSection } from "./Pages/ProjectsSection";
 import { ContactSection } from "./Pages/ContactSection";
 import ProjectDetail from "./features/projects/pages/ProjectDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const location = useLocation();
@@ -24,9 +25,11 @@ export default function App() {
   }, [location]);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans scroll-smooth bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100">
+    <div className="min-h-screen flex flex-col font-sans scroll-smooth
+     bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100">
       <Navbar />
       <div className="flex-1">
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"

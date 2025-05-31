@@ -95,7 +95,7 @@ export const Navbar = () => {
             menu ? "block" : "hidden"
           } md:flex md:space-x-6 space-y-2 md:space-y-0 absolute md:static
              bg-white dark:bg-zinc-900 left-0 w-full md:w-auto top-16 md:top-auto px-6
-             md:px-0 py-4 md:py-0 border-b-3 border-zinc-800 transition`}
+             md:px-0 py-4 md:py-0 transition`}
         >
           {sectionIds.map((id) => (
             <button

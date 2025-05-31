@@ -5,7 +5,7 @@ export const AboutSection = () => {
     <motion.section
       id="about"
       className="min-h-screen flex flex-col md:flex-col px-6 py-20 border-t-5 border-zinc-300 bg-zinc-100 
-      dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 pt-44"
+      dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 pt-44"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
