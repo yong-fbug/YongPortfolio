@@ -1,5 +1,5 @@
 // utils.ts (or throttle.ts)
-export function throttle<T extends (...args: any[]) => void>(func: T, delay: number): T {
+export function throttle<T extends (...args: unknown[]) => void>(func: T, delay: number): T {
   let lastCall = 0;
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
