@@ -8,13 +8,13 @@ import { SiJavascript, SiTypescript } from "react-icons/si";
 const techs = [
   { 
     name: "JavaScript", 
-    icon: <SiJavascript className="w-10 h-10 text-yellow-500" />, 
-    color: "bg-yellow-100 dark:bg-yellow-300"
+    icon: <SiJavascript className="w-10 h-10 text-yellow-500 dark:text-yellow-500" />, 
+    color: "bg-yellow-300 dark:bg-yellow-300"
   },
   { 
     name: "TypeScript", 
-    icon: <SiTypescript className="w-10 h-10 text-blue-500" />,  
-    color: "bg-blue-100 dark:bg-blue-300"
+    icon: <SiTypescript className="w-10 h-10 text-blue-500 dark:text-blue-500" />,  
+    color: "bg-blue-300 dark:bg-blue-300"
   },
 ];
 
@@ -55,7 +55,8 @@ export const AboutSection = () => {
 
         {/* RIGHT SIDE */}
         <div className="grid sm:grid-cols-2 gap-6">
-          
+
+          {/* Programming      */}
           <div
             className={`rounded-xl p-6 shadow-md transition-all duration-300 ${techs[scrollToNextTech].color} flex flex-col items-center`}
           >

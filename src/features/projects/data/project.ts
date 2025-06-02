@@ -1,20 +1,20 @@
 
 //PMS img
-import pmsImage from "../img/PMS/pms.jpg";
-import sampleImg from "../img/PMS/ewan.jpg";
+import pmsImage from "../../../assets/PMS/pms.jpg";
+import sampleImg from "../../../assets/PMS/ewan.jpg";
 
 //TAE img
-import TAEImg from "../img/TAE/title_0.png";
-import _1 from "../img/TAE/_1.png";
-import _2 from "../img/TAE/_2.png";
-import _3 from "../img/TAE/_3.png";
-import _4 from "../img/TAE/_4.png";
-import _5 from "../img/TAE/_5.png";
-import _6 from "../img/TAE/_6.png";
-import _7 from "../img/TAE/_7.png";
-import _8 from "../img/TAE/_8.png";
-import _9 from "../img/TAE/_9.png";
-import _10 from "../img/TAE/_10.png";
+import TAEImg from "../../../assets/TAE/title_0.png";
+import _1 from "../../../assets//TAE/_1.png";
+import _2 from "../../../assets/TAE/_2.png";
+import _3 from "../../../assets/TAE/_3.png";
+import _4 from "../../../assets/TAE/_4.png";
+import _5 from "../../../assets/TAE/_5.png";
+import _6 from "../../../assets/TAE/_6.png";
+import _7 from "../../../assets/TAE/_7.png";
+import _8 from "../../../assets/TAE/_8.png";
+import _9 from "../../../assets/TAE/_9.png";
+import _10 from "../../../assets/TAE/_10.png";
 
 export interface Project {
   id: number;
