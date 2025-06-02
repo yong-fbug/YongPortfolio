@@ -1,9 +1,14 @@
 // utils.ts (or throttle.ts)
-export function throttle<T extends (...args: unknown[]) => void>(func: T, delay: number): T {
+export function throttle<Args extends unknown[]> (
+  func: (...args: Args  ) => void,
+  delay: number
+) : (...args: Args) => void {
+
   let lastCall = 0;
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
-  return function (...args: Parameters<T>) {
+
+  return function (...args: Args) {
     const now = Date.now();
 
     if (now - lastCall >= delay) {
@@ -16,5 +21,5 @@ export function throttle<T extends (...args: unknown[]) => void>(func: T, delay:
         func(...args);
       }, delay - (now - lastCall));
     }
-  } as T;
+  };
 }

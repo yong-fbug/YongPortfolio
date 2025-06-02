@@ -10,7 +10,7 @@ import _2 from "../../../assets/TAE/_2.png";
 import _3 from "../../../assets/TAE/_3.png";
 import _4 from "../../../assets/TAE/_4.png";
 import _5 from "../../../assets/TAE/_5.png";
-import _6 from "../../../assets/TAE/_6.png";
+import _6 from "../../../assets/TAE/_6.png";    
 import _7 from "../../../assets/TAE/_7.png";
 import _8 from "../../../assets/TAE/_8.png";
 import _9 from "../../../assets/TAE/_9.png";

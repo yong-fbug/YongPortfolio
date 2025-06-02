@@ -17,7 +17,8 @@ export const Navbar = () => {
   const isRootPage = location.pathname === "/" || location.pathname === "/YongPortfolio";
 
   const scrollToSection = (id: string) => {
-    if (!isRootPage) {
+    if (!isRootPage) 
+      {
       navigate("/", { state: { scrollTo: id } });
     } else {
       const section = document.getElementById(id);

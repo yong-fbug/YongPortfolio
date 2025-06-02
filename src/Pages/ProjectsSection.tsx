@@ -28,7 +28,7 @@ export const ProjectsSection = () => {
                 className="w-full h-48 object-cover"
               />
               {images?.map((_, index) => (
-                <div key={index}></div>
+                <div key={index}></div> 
               ))}
               <div className="p-4 bg-white dark:bg-zinc-800">
                 <h3 className="text-xl font-bold mb-2">{title}</h3>
