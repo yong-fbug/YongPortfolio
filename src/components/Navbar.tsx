@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { throttle } from "../utils/setActiveThrottled";
 
-const sectionIds = ["home", "about", "projects", "contact"];
+const sectionIds = ["home", "about", "projects"];
 
 export const Navbar = () => {
   const [active, setActive] = useState<string>("home");

@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+
+import { projects } from "../features/projects/data/project";
+import { ContactSection } from "../components/ContactSection";
+
 import myImage from "../assets/myImage/jaspherflores.jpeg";
 import { ChevronLeft, ChevronRight, Presentation } from "lucide-react";
 import { useState } from "react";
-import { projects } from "../features/projects/data/project";
 import { SiJavascript, SiTypescript } from "react-icons/si";
+
 
 const techs = [
   { 
@@ -48,9 +52,10 @@ export const AboutSection = () => {
             />
             <h1 className="text-2xl font-semibold">I'm Jaspher Flores</h1>
           </div>
-          <p className="text-base leading-relaxed">
-            I'm a React and Node.js developer who thrives on crafting clean, scalable interfaces with modern technologies.
+          <p className="text-base leading-relaxe">
+            I am a React and Node.js developer who thrives on crafting clean, scalable interfaces with modern technologies.
           </p>
+          <ContactSection />
         </div>
 
         {/* RIGHT SIDE */}
@@ -90,17 +95,26 @@ export const AboutSection = () => {
           </div>
 
           {/* Projects Card */}
-          <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-md min-h-[150px]">
-            <div className="flex items-center gap-2 mb-4">
-              <Presentation />
-              <h2 className="text-lg font-semibold">Projects</h2>
-            </div>
-            <div className="flex items-center justify-between">
-              <ChevronLeft onClick={prevProject} className="cursor-pointer" />
-              <p className="text-sm text-center px-4 truncate max-w-[150px]">
-                {projects[scrollToNextProject].title}
-              </p>
-              <ChevronRight onClick={nextProject} className="cursor-pointer" />
+          <div 
+            className="rounded-xl p-6 shadow-md min-h-[150px] bg-cover bg-center bg-no-repeat text-white"
+            style={{
+              backgroundImage: `url(${projects[scrollToNextProject].imgSrc})`,
+            }}
+          >
+            <div className="bg-black/50 backdrop-blur-sm rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-4">
+                <Presentation />
+                <h2 className="text-lg font-semibold">Projects</h2>
+              </div>
+            
+              <div className="flex items-center justify-between">
+                <ChevronLeft onClick={prevProject} className="cursor-pointer" />
+                <p className="text-sm text-center px-4 truncate max-w-[150px]">
+                  {projects[scrollToNextProject].title}
+                </p>
+                <ChevronRight onClick={nextProject} className="cursor-pointer" />
+              </div>
+              
             </div>
           </div>
           

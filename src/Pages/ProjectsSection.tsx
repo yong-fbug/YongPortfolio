@@ -39,6 +39,7 @@ export const ProjectsSection = () => {
             </motion.div>
           </Link>
         ))}
+        
       </div>
     </motion.section>
   );

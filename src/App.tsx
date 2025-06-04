@@ -5,7 +5,7 @@ import { Navbar } from "./components/Navbar";
 import { HomeSection } from "./Pages/HomeSection";
 import { AboutSection } from "./Pages/AboutSection";
 import { ProjectsSection } from "./Pages/ProjectsSection";
-import { ContactSection } from "./Pages/ContactSection";
+// import { ContactSection } from "./Pages/ContactSection";
 import ProjectDetail from "./features/projects/pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -38,7 +38,9 @@ export default function App() {
                 <HomeSection />
                 <AboutSection />
                 <ProjectsSection />
-                <ContactSection />
+                {/* <ContactSection /> */}
+                {/* I disabled contact section and create contact components.
+                 I merge it in about section  */}
               </main>
             }
           />

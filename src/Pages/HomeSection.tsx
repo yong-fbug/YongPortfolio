@@ -53,6 +53,8 @@ export const HomeSection = () => {
           className="w-full h-full object-cover"
         />
       </motion.div>
+
+      
     </motion.section>
   );
 };
