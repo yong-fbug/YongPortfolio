@@ -80,9 +80,12 @@ export const Navbar = () => {
   }, [isRootPage, location.state, navigate, setActiveThrottled]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-zinc-900 px-6 py-4 shadow">
+    <nav className="fixed top-0 left-0 right-0 z-50
+     bg-white dark:bg-gray-800 px-6 py-4 shadow">
       <div className="flex justify-between items-center">
-        <div className="text-xl font-bold">Yong's Portfolio</div>
+        <div className="text-xl font-bold">
+          {/* Yong's Portfolio */}
+        </div>
 
         <button
           onClick={() => setMenu((prev) => !prev)}
@@ -95,7 +98,7 @@ export const Navbar = () => {
           className={`${
             menu ? "block" : "hidden"
           } md:flex md:space-x-6 space-y-2 md:space-y-0 absolute md:static
-             bg-white dark:bg-zinc-900 left-0 w-full md:w-auto top-16 md:top-auto px-6
+              left-0 w-full md:w-auto top-16 md:top-auto px-6
              md:px-0 py-4 md:py-0 transition`}
         >
           {sectionIds.map((id) => (

@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../features/projects/data/project";
+import { Background } from "../utils/Background";
 
 export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className="min-h-screen flex flex-col px-6 py-20 pt-44 border-t-5 border-zinc-300 bg-zinc-100 
-      dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100"
+      className={`relative min-h-screen flex flex-col px-6 py-20 pt-44 border-t-5 ${Background}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
