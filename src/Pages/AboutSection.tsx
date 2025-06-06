@@ -7,7 +7,6 @@ import { projects } from "../features/projects/data/project";
 import { ContactSection } from "../components/ContactSection";
 import { Background } from "../utils/Background";
 
-import myImage from "../assets/myImage/jaspherflores.jpeg";
 
 const techs = [
   {
