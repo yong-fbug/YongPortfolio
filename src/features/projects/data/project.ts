@@ -16,6 +16,26 @@ import _8 from "../img/TAE/_8.png";
 import _9 from "../img/TAE/_9.png"
 import _10 from "../img/TAE/_10.png";
 
+//DTR img
+import DtrBackground from "../img/DTR/dtr-background.png";
+import dtr_one from "../img/DTR/dtr_one.png";
+import dtr_two from "../img/DTR/dtr_two.png"
+import dtr_three from "../img/DTR/dtr_three.png"
+import dtr_four from "../img/DTR/dtr_four.png"
+import dtr_five from "../img/DTR/dtr_five.png"
+import dtr_six from "../img/DTR/dtr_six.png"
+import dtr_seven from "../img/DTR/dtr_seven.png"
+import dtr_eight from "../img/DTR/dtr_eight.png"
+import dtr_nine from "../img/DTR/dtr_nine.png"
+
+//Beverage
+import beberage from "../img/Beverage/beverageBackground.png";
+import beberage_one from "../img/Beverage/beberage_one.png";
+import beberage_two from "../img/Beverage/beberage_two.png";
+import beberage_three from "../img/Beverage/beberage_three.png";
+import beberage_four from "../img/Beverage/beberage_four.png";
+import beberage_five from "../img/Beverage/beberage_five.png";
+
 export interface Project {
   id: number;
   title: string;
@@ -43,7 +63,10 @@ export const projects: Project[] = [
     id: 2,
     title: 'Daily Ticket Report',
     description: 'A ticket tracking Report vizualize, anaylze and tracks ticket within a day or weekly.',
-    imgSrc: TAEImg,
+    imgSrc: DtrBackground,
+    images: [
+    dtr_one, dtr_two, dtr_three, dtr_four, dtr_five, dtr_six, dtr_seven, dtr_eight, dtr_nine 
+  ],
     content: "Details about project..",
     
   },
@@ -61,7 +84,10 @@ export const projects: Project[] = [
   id: 4,
   title: 'Beverage Inventory Management',
   description: 'A system to efficiently track and manage beverage stock levels, ensuring timely restocking and minimizing wastage.',
-  imgSrc: TAEImg,
+  imgSrc: beberage,
+  images: [
+    beberage, beberage_one, beberage_two, beberage_three, beberage_four, beberage_five
+  ],
   content: "A web application that helps businesses monitor their beverage inventory by tracking quantities, categories, and stock changes. Features include adding new items, updating stock, and generating alerts for low inventory."
 }
 

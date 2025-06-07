@@ -12,7 +12,7 @@ const techs = [
   {
     name: "JavaScript",
     icon: <SiJavascript className="w-10 h-10 text-yellow-500" />,
-    color: "bg-yellow-100 dark:bg-yellow-900",
+    color: "bg-yellow-400 dark:bg-yellow-400",
   },
   {
     name: "TypeScript",

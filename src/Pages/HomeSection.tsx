@@ -105,7 +105,7 @@ export const HomeSection = () => {
 
       {/* Right: Image */}
       <motion.div
-        className="z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-zinc-300 dark:border-zinc-700 shadow-lg mb-10 md:mb-0"
+        className="z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-gray-300 dark:border-gray-700 shadow-lg mb-10 md:mb-0"
         initial={{ x: 30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
