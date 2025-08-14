@@ -16,7 +16,7 @@ export const ContactSection = () => {
                 </a>
             </div>
             <a
-            href="/resume/Flores-resume" 
+            href="/resume/Jaspher_Flores_Resume.pdf" 
             download
             className="flex items-center gap-2 px-5 py-3 border border-zinc-300 dark:border-zinc-700 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
             aria-label="Download Resume"
