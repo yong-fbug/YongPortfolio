@@ -13,7 +13,7 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const scrollTo = (location.state as any)?.scrollTo;
+    const scrollTo = location.state?.scrollTo;
     if (scrollTo) {
       const el = document.getElementById(scrollTo);
       if (el) {
@@ -25,9 +25,12 @@ export default function App() {
   }, [location]);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans scroll-smooth
-     bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100">
+    <div
+      className="min-h-screen flex flex-col font-sans scroll-smooth
+     bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100"
+    >
       <Navbar />
+
       <div className="flex-1">
         <ScrollToTop />
         <Routes>

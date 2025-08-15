@@ -61,7 +61,12 @@ export const projects: Project[] = [
     content:
       "Development of a web-based intelligent parking management system with online booking designed for the City of Malabon University, improving parking efficiency and user convenience.",
     className: "border-blue-400 shadow-blue-300 h-10",
-    stack: [<SiJavascript />, <SiPhp />, <SiCss3 />, <SiXampp />],
+    stack: [
+      <SiJavascript className="bg-black text-yellow-500" />,
+      <SiPhp className=" text-violet-900" />,
+      <SiCss3 className="bg-white text-blue-600" />,
+      <SiXampp className="bg-white text-amber-700" />,
+    ],
   },
 
   {

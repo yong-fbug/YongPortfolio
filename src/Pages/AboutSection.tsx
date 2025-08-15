@@ -7,7 +7,6 @@ import { projects } from "../features/projects/data/project";
 import { ContactSection } from "../components/ContactSection";
 import { Background } from "../utils/Background";
 
-
 const techs = [
   {
     name: "JavaScript",
@@ -26,9 +25,12 @@ export const AboutSection = () => {
   const [scrollToNextProject, setScrollToNextProject] = useState(0);
 
   const nextTech = () => setScrollToNextTech((i) => (i + 1) % techs.length);
-  const prevTech = () => setScrollToNextTech((i) => (i - 1 + techs.length) % techs.length);
-  const nextProject = () => setScrollToNextProject((i) => (i + 1) % projects.length);
-  const prevProject = () => setScrollToNextProject((i) => (i - 1 + projects.length) % projects.length);
+  const prevTech = () =>
+    setScrollToNextTech((i) => (i - 1 + techs.length) % techs.length);
+  const nextProject = () =>
+    setScrollToNextProject((i) => (i + 1) % projects.length);
+  const prevProject = () =>
+    setScrollToNextProject((i) => (i - 1 + projects.length) % projects.length);
 
   return (
     <motion.section
@@ -40,7 +42,6 @@ export const AboutSection = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-
         {/* LEFT */}
         <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg p-8 space-y-6 transition-all">
           <div className="flex items-center">
@@ -54,14 +55,14 @@ export const AboutSection = () => {
             </h1> */}
           </div>
           <p className="text-base leading-relaxed tracking-tight text-gray-700 dark:text-gray-300">
-            I am a React and Node.js developer who thrives on crafting clean, scalable interfaces with modern technologies.
+            I am a React and Node.js developer who thrives on crafting clean,
+            scalable interfaces with modern technologies.
           </p>
           <ContactSection />
         </div>
 
         {/* RIGHT */}
         <div className="grid sm:grid-cols-2 gap-6">
-
           {/* Tech Card */}
           <div
             className={`rounded-xl p-6 shadow-md transition-transform hover:scale-[1.02] ${techs[scrollToNextTech].color} flex flex-col items-center`}
@@ -98,7 +99,9 @@ export const AboutSection = () => {
           {/* Projects Card */}
           <div
             className="rounded-xl p-6 shadow-md min-h-[150px] bg-cover bg-center bg-no-repeat text-white relative overflow-hidden"
-            style={{ backgroundImage: `url(${projects[scrollToNextProject].imgSrc})` }}
+            style={{
+              backgroundImage: `url(${projects[scrollToNextProject].imgSrc})`,
+            }}
           >
             <div className="bg-black/50 backdrop-blur-sm rounded-xl p-4">
               <div className="flex items-center gap-2 mb-4">
@@ -111,7 +114,10 @@ export const AboutSection = () => {
                 <p className="text-sm text-center px-4 truncate max-w-[150px]">
                   {projects[scrollToNextProject].title}
                 </p>
-                <ChevronRight onClick={nextProject} className="cursor-pointer" />
+                <ChevronRight
+                  onClick={nextProject}
+                  className="cursor-pointer"
+                />
               </div>
             </div>
           </div>
@@ -131,10 +137,10 @@ export const AboutSection = () => {
           <div className="rounded-xl p-6 shadow-md bg-green-100 dark:bg-green-900 text-gray-900 dark:text-white flex flex-col items-center hover:scale-[1.02] transition-transform">
             <h2 className="text-xl font-bold mb-2">Soft Skill</h2>
             <p className="text-center text-sm">
-              Strong communicator and collaborative team player who values clean code and continuous learning.
+              Strong communicator and collaborative team player who values clean
+              code and continuous learning.
             </p>
           </div>
-
         </div>
       </div>
     </motion.section>

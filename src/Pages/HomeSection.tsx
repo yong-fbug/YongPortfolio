@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import myImage from "../assets/myImage/jaspherflores.jpeg";
 import { Background } from "../utils/Background";
 import { Typewriter } from "react-simple-typewriter";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { SiJavascript, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
+
+import {
+  SiJavascript,
+  SiNodedotjs,
+  SiReact,
+  SiTailwindcss,
+} from "react-icons/si";
 
 export const HomeSection = () => {
-  const particlesInit = async (main: any) => {
-    await loadFull(main);
-  };
-
   return (
     <motion.section
       id="home"
@@ -21,22 +21,7 @@ export const HomeSection = () => {
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.7 }}
     >
-      {/* Particles Background */}
-      <Particles
-        init={particlesInit}
-        className="absolute inset-0 z-0"
-        options={{
-          particles: {
-            number: { value: 60 },
-            size: { value: 2 },
-            move: { enable: true, speed: 0.6 },
-            color: { value: "#888" },
-          },
-          fullScreen: { enable: false },
-        }}
-      />
-
-      {/* Left: Text */}
+      {/* Left: Text and Typewriter */}
       <motion.div
         className="z-10 w-full md:w-1/2 text-center md:text-left"
         initial={{ x: -30, opacity: 0 }}
@@ -49,7 +34,7 @@ export const HomeSection = () => {
 
         <h2 className="text-xl md:text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4">
           <Typewriter
-            words={["React Developer", "Node.js Developer", "UI/UX Enthusiast"]}
+            words={["React Developer", "Node.js Developer"]}
             loop
             cursor
             cursorStyle="|"
@@ -72,22 +57,41 @@ export const HomeSection = () => {
             href="#projects"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+              document
+                .querySelector("#projects")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-block px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-black 
-            rounded-lg font-medium hover:opacity-90 transition duration-300"
+            className="inline-block px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition duration-300"
           >
             View Projects
           </a>
         </div>
 
-        {/* Tech Stack Showcase */}
+        {/* Tech Stack Icons */}
         <div className="flex gap-4 mt-6 justify-center md:justify-start">
           {[
-            { icon: <SiReact className="text-blue-500 dark:text-blue-700" />, alt: "React" },
-            { icon: <SiNodedotjs className="text-green-500 dark:text-green-700" />, alt: "Node.js" },
-            { icon: <SiTailwindcss className="text-sky-500 dark:text-sky-700" />, alt: "Tailwind CSS" },
-            { icon: <SiJavascript className="text-yellow-500 dark:text-yellow-700" />  , alt: "JavaScript" },
+            {
+              icon: <SiReact className="text-blue-500 dark:text-blue-700" />,
+              alt: "React",
+            },
+            {
+              icon: (
+                <SiNodedotjs className="text-green-500 dark:text-green-700" />
+              ),
+              alt: "Node.js",
+            },
+            {
+              icon: (
+                <SiTailwindcss className="text-sky-500 dark:text-sky-700" />
+              ),
+              alt: "Tailwind CSS",
+            },
+            {
+              icon: (
+                <SiJavascript className="text-yellow-500 dark:text-yellow-700" />
+              ),
+              alt: "JavaScript",
+            },
           ].map((tech, index) => (
             <motion.div
               key={index}
@@ -100,10 +104,9 @@ export const HomeSection = () => {
             </motion.div>
           ))}
         </div>
-
       </motion.div>
 
-      {/* Right: Image */}
+      {/* Right: Profile Image */}
       <motion.div
         className="z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-gray-300 dark:border-gray-700 shadow-lg mb-10 md:mb-0"
         initial={{ x: 30, opacity: 0 }}

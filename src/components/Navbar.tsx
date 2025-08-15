@@ -12,13 +12,15 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const setActiveThrottled = useRef(throttle((id: string) => setActive(id), 200)).current;
+  const setActiveThrottled = useRef(
+    throttle((id: string) => setActive(id), 200)
+  ).current;
 
-  const isRootPage = location.pathname === "/" || location.pathname === "/YongPortfolio";
+  const isRootPage =
+    location.pathname === "/" || location.pathname === "/YongPortfolio";
 
   const scrollToSection = (id: string) => {
-    if (!isRootPage) 
-      {
+    if (!isRootPage) {
       navigate("/", { state: { scrollTo: id } });
     } else {
       const section = document.getElementById(id);
@@ -77,15 +79,21 @@ export const Navbar = () => {
     }, 700); // Delay observer setup to allow scroll to finish
 
     return () => clearTimeout(timeout);
-  }, [isRootPage, location.state, navigate, setActiveThrottled]);
+  }, [
+    isRootPage,
+    location.state,
+    navigate,
+    setActiveThrottled,
+    location.pathname,
+  ]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50
-     bg-white dark:bg-gray-800 px-6 py-4 shadow">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50
+     bg-white dark:bg-gray-800 px-6 py-4 shadow"
+    >
       <div className="flex justify-between items-center">
-        <div className="text-xl font-bold">
-          {/* Yong's Portfolio */}
-        </div>
+        <div className="text-xl font-bold">{/* Yong's Portfolio */}</div>
 
         <button
           onClick={() => setMenu((prev) => !prev)}
@@ -105,7 +113,7 @@ export const Navbar = () => {
             <button
               key={id}
               onClick={() => scrollToSection(id)}
-              className={`capitalize transition text-left w-full md:w-auto ${
+              className={`capitalize transition text-left w-full md:w-auto tracking-widest ${
                 active === id
                   ? "text-blue-600 font-bold"
                   : "hover:text-blue-400"
