@@ -9,12 +9,13 @@ import {
   SiReact,
   SiTailwindcss,
 } from "react-icons/si";
+import { Hand } from "lucide-react";
 
 export const HomeSection = () => {
   return (
     <motion.section
       id="home"
-      className={`relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-between
+      className={`snap-center relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-between
         px-6 md:px-20 pt-20 ${Background}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -28,13 +29,38 @@ export const HomeSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">
-          Hi, I'm Jaspher Flores
-        </h1>
+        <div className="text-4xl md:text-5xl font-bold leading-tight mb-2">
+          <span>{`Hi        `} </span>
+          <motion.div
+            style={{ display: "inline-block", cursor: "pointer" }}
+            whileHover={{
+              rotate: [0, 20, -10, 20, 0],
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            // className="flex items-center justify-start gap-5"
+          >
+            <Hand size={35} strokeWidth={2} />
+          </motion.div>
+          <span>,</span>
+
+          <div>
+            <h1 className="">I'm Jaspher Flores</h1>
+          </div>
+        </div>
 
         <h2 className="text-xl md:text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4">
+          React Developer and Node.js Developer
+        </h2>
+
+        {/* <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
+          React Developer Node.js Developer
+        </p> */}
+        <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
           <Typewriter
-            words={["React Developer", "Node.js Developer"]}
+            words={["More Monkey, More fun."]}
             loop
             cursor
             cursorStyle="|"
@@ -42,10 +68,6 @@ export const HomeSection = () => {
             deleteSpeed={50}
             delaySpeed={1000}
           />
-        </h2>
-
-        <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
-          “More Monkey, More Fun.”
         </p>
 
         <span className="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mt-2 mb-5 dark:bg-green-900 dark:text-green-300">

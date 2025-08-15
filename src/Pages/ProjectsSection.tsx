@@ -7,28 +7,22 @@ export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className={`relative min-h-screen flex flex-col px-6 pt-44 border-t-5 ${Background}`}
+      className={`snap-start relative h-screen flex flex-col px-6 pt-12 border-t-[5px] overflow-hidden ${Background}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.7 }}
     >
-      <h2 className="text-4xl font-semibold mb-20 text-center">Projects</h2>
-
-      {/* Scrollable container */}
-      <div
-        className="p-2 w-full h-auto max-h-[calc(100vh-4rem)] 
-        overflow-auto scroll-smooth snap-y snap-mandatory flex flex-col overscroll-auto"
-      >
-        <div className="flex flex-col justify-between items-center">
+      {/* Inner scroll for project cards */}
+      <div className="flex-1 overflow-y-auto scroll-smooth">
+        <div className="flex flex-col items-center">
           {projects.map(({ id, title, description, imgSrc, stack }, index) => (
             <div
               key={id}
-              className={`flex flex-col md:flex-row snap-start z-50 mb-20 min-h-[100vh] ${
+              className={`flex flex-col md:flex-row z-50 mb-20 ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } items-center gap-8`}
             >
-              {/* Link with image */}
               <Link
                 to={`/projects/${id}`}
                 className="cursor-crosshair flex flex-col items-center gap-2"
@@ -44,15 +38,12 @@ export const ProjectsSection = () => {
                   View Project
                 </span>
               </Link>
-
-              {/* Text content */}
               <div className="p-4 max-w-[365px]">
                 <h3 className="text-xl font-bold mb-2">{title}</h3>
                 <p>Capstone-project:</p>
                 <p className="text-zinc-600 dark:text-zinc-300">
                   {description}
                 </p>
-
                 <div className="flex items-end gap-4 pt-2">
                   {stack?.map((icon, i) => (
                     <span key={i} className="text-3xl">

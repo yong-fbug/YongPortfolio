@@ -8,7 +8,6 @@ import { ProjectsSection } from "./Pages/ProjectsSection";
 // import { ContactSection } from "./Pages/ContactSection";
 import ProjectDetail from "./features/projects/pages/ProjectDetails";
 import ScrollToTop from "./components/ScrollToTop";
-import "./App.css";
 
 export default function App() {
   const location = useLocation();
@@ -20,7 +19,7 @@ export default function App() {
       if (el) {
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+        }, 100); // Ensure DOM is mounted
       }
     }
   }, [location]);
@@ -38,7 +37,7 @@ export default function App() {
           <Route
             path="/"
             element={
-              <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+              <main>
                 <HomeSection />
                 <AboutSection />
                 <ProjectsSection />
