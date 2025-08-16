@@ -8,6 +8,7 @@ import {
   SiNodedotjs,
   SiReact,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { Hand } from "lucide-react";
 
@@ -30,10 +31,14 @@ export const HomeSection = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="text-4xl md:text-5xl font-bold leading-tight mb-2">
-          <span>{`Hi        `} </span>
+          <span>{`Hi`} </span>
           <motion.div
-            style={{ display: "inline-block", cursor: "pointer" }}
+            // style={{ display: "inline-block", cursor: "pointer" }}
+            className="inline-block cursor-pointer hover:text-amber-900"
             whileHover={{
+              rotate: [0, 20, -10, 20, 0],
+            }}
+            whileTap={{
               rotate: [0, 20, -10, 20, 0],
             }}
             transition={{
@@ -70,7 +75,10 @@ export const HomeSection = () => {
           />
         </p>
 
-        <span className="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mt-2 mb-5 dark:bg-green-900 dark:text-green-300">
+        <span
+          className="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mt-2 mb-5 dark:bg-green-900 dark:text-green-300
+        select-none"
+        >
           Open to Freelance & Collaboration
         </span>
 
@@ -107,6 +115,12 @@ export const HomeSection = () => {
                 <SiTailwindcss className="text-sky-500 dark:text-sky-700" />
               ),
               alt: "Tailwind CSS",
+            },
+            {
+              icon: (
+                <SiTypescript className="text-blue-500 dark:text-blue-700" />
+              ),
+              alt: "JavaScript",
             },
             {
               icon: (

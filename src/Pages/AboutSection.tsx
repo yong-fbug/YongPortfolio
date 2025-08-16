@@ -36,7 +36,7 @@ export const AboutSection = () => {
         {/* Top cards */}
         <div className="flex flex-col md:flex-row gap-4">
           {/* Internship card */}
-          <div className="bg-teal-600 w-full md:w-96 rounded-xl p-4">
+          <div className=" w-full md:w-96 rounded-xl p-4 shadow-lg border-2 ">
             <h1 className="uppercase tracking-widest font-bold">Internship</h1>
             <div className="mt-2 space-y-1">
               <h2 className="font-medium">
@@ -54,7 +54,7 @@ export const AboutSection = () => {
           </div>
 
           {/* About me card */}
-          <div className="bg-red-600 flex-1 rounded-xl p-4">
+          <div className="shadow-lg  border-2  flex-1 rounded-xl p-4">
             <p className="uppercase tracking-widest font-bold">About me here</p>
             <h1 className="mt-2 text-sm sm:text-base md:text-lg leading-relaxed">
               I am a web developer specializing in React, TypeScript, and the
@@ -78,8 +78,9 @@ export const AboutSection = () => {
                     href={techUrl[tech]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-4xl"
+                    className="text-3xl"
                     whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 1.2 }}
                     transition={{ type: "keyframes", stiffness: 300 }}
                   >
                     <motion.div
@@ -112,7 +113,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Resume/Cat */}
-          <div className="bg-blue-600 w-full lg:w-80 rounded-xl p-4">
+          <div className="shadow-lg border-2 w-full lg:w-80 rounded-xl p-4">
             <p className="text-sm sm:text-base">Cat and resume here</p>
           </div>
         </div>
