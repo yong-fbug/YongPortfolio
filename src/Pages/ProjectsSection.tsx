@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../features/projects/data/project";
 import { Background } from "../utils/Background";
+import { techIcons } from "../features/projects/data/techIcon";
 
 export const ProjectsSection = () => {
   return (
@@ -14,7 +15,7 @@ export const ProjectsSection = () => {
       transition={{ duration: 0.7 }}
     >
       {/* Inner scroll for project cards */}
-      <div className="flex-1 overflow-y-auto scroll-smooth">
+      <div className="flex-1 overflow-x-hidden overflow-y-auto scroll-smooth">
         <div className="flex flex-col items-center">
           {projects.map(({ id, title, description, imgSrc, stack }, index) => (
             <div
@@ -25,7 +26,7 @@ export const ProjectsSection = () => {
             >
               <Link
                 to={`/projects/${id}`}
-                className="cursor-crosshair flex flex-col items-center gap-2"
+                className=" flex flex-col items-center gap-2"
               >
                 <img
                   src={imgSrc}
@@ -47,7 +48,7 @@ export const ProjectsSection = () => {
                 <div className="flex items-end gap-4 pt-2">
                   {stack?.map((icon, i) => (
                     <span key={i} className="text-3xl">
-                      {icon}
+                      {techIcons[icon]}
                     </span>
                   ))}
                 </div>

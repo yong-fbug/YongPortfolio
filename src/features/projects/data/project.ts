@@ -35,9 +35,6 @@ import beberage_three from "../img/Beverage/beberage_three.png";
 import beberage_four from "../img/Beverage/beberage_four.png";
 import beberage_five from "../img/Beverage/beberage_five.png";
 
-import type { ReactNode } from "react";
-import { SiCss3, SiJavascript, SiPhp, SiXampp } from "react-icons/si";
-
 export interface Project {
   id: number;
   title: string;
@@ -46,7 +43,7 @@ export interface Project {
   images?: string[] | undefined;
   content: string | undefined;
   className?: string;
-  stack?: ReactNode[];
+  stack?: string[];
 }
 
 export const projects: Project[] = [
@@ -62,10 +59,14 @@ export const projects: Project[] = [
       "Development of a web-based intelligent parking management system with online booking designed for the City of Malabon University, improving parking efficiency and user convenience.",
     className: "border-blue-400 shadow-blue-300 h-10",
     stack: [
-      <SiJavascript className="bg-black text-yellow-500" />,
-      <SiPhp className=" text-violet-900" />,
-      <SiCss3 className="bg-white text-blue-600" />,
-      <SiXampp className="bg-white text-amber-700" />,
+      // <SiJavascript className="bg-black text-yellow-500" />,
+      // <SiPhp className=" text-violet-900" />,
+      // <SiCss3 className="bg-white text-blue-600" />,
+      // <SiXampp className="bg-white text-amber-700" />,
+      "JavaScript",
+      "PHP",
+      "CSS3",
+      "XAMPP",
     ],
   },
 
@@ -87,7 +88,7 @@ export const projects: Project[] = [
       dtr_nine,
     ],
     content: "Details about project..",
-    stack: undefined,
+    stack: ["React"],
   },
   {
     id: 3,
@@ -97,7 +98,7 @@ export const projects: Project[] = [
     imgSrc: TAEImg,
     images: [_1, _2, _3, _4, _5, _6, _7, _8, _9, _10],
     content: "Details about project ..",
-    stack: undefined,
+    stack: ["React", "GoogleAppscript"],
   },
   {
     id: 4,
@@ -126,6 +127,18 @@ export const projects: Project[] = [
     imgSrc: undefined,
     images: undefined,
     content: "",
-    stack: undefined,
+    stack: [
+      // <SiReact />,
+      // <SiExpress />,
+      // <SiNodedotjs />,
+      // <SiMongodb />,
+      // <SiMongoose />,
+      "React",
+      "TypeScript",
+      "Express",
+      "Nodejs",
+      "Mongodb",
+      "Mongoose",
+    ],
   },
 ];
