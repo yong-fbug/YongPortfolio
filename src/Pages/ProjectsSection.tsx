@@ -8,7 +8,7 @@ export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className={`snap-start relative h-screen flex flex-col px-6 pt-12 border-t-[5px] overflow-hidden ${Background}`}
+      className={`snap-start relative h-screen flex flex-col px-6 pt-12 overflow-hidden ${Background}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}

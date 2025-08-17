@@ -28,7 +28,7 @@ export default function App() {
   return (
     <div
       className="min-h-screen flex flex-col font-sans scroll-smooth
-     bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-100"
+      text-zinc-800 dark:text-zinc-100"
     >
       <Navbar />
 
@@ -42,9 +42,6 @@ export default function App() {
                 <HomeSection />
                 <AboutSection />
                 <ProjectsSection />
-                {/* <ContactSection /> */}
-                {/* I disabled contact section and create contact components.
-                 I merge it in about section  */}
               </main>
             }
           />
