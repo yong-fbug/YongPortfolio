@@ -8,7 +8,6 @@ import {
   SiGmail,
   SiJavascript,
   SiLinkedin,
-  SiMailboxdotorg,
   SiNodedotjs,
   SiReact,
   SiTailwindcss,
