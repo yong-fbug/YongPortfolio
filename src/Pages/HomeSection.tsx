@@ -1,26 +1,17 @@
 import { motion } from "framer-motion";
 import myImage from "../assets/myImage/jaspherflores.jpeg";
 import { Background } from "../utils/Background";
-import { Typewriter } from "react-simple-typewriter";
 
-import {
-  SiGithub,
-  SiGmail,
-  SiJavascript,
-  SiLinkedin,
-  SiNodedotjs,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 import { MapPin } from "lucide-react";
 
 export const HomeSection = () => {
   return (
     <motion.section
       id="home"
-      className={`snap-center relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center
-         gap-10 px-6 md:px-20 pt-20 ${Background}`}
+      className={`snap-center relative min-h-screen flex flex-col md:flex-row items-center justify-center
+         gap-6 md:gap-12 px-4 sm:px-6  md:px-16 pt-16 sm:pt-16 ${Background}
+        overflow-x-hidden`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
@@ -28,8 +19,8 @@ export const HomeSection = () => {
     >
       {/* Right: Profile Image */}
       <motion.div
-        className="z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden 
-        border-4 border-gray-300 dark:border-gray-700 shadow-lg mb-10 md:mb-28"
+        className="z-10 w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 rounded-full overflow-hidden 
+        border-4 border-gray-300 dark:border-gray-700 shadow-lg mb-8 md:mb-20"
         initial={{ x: 30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -49,23 +40,23 @@ export const HomeSection = () => {
       >
         <div className=" leading-tight mb-2">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               Hi, I'm Jaspher Flores
             </h1>
-            <h3 className="flex items-center gap-1 text-[19px] pt-2">
+            <h3 className="flex items-center gap-1 text-base justify-center sm:justify-start sm:text-lg pt-2">
               <MapPin size={19} /> Philippines Malabon
             </h3>
           </div>
         </div>
 
         <h2 className="text-xl md:text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4">
-          React Developer and Node.js Developer
+          React and Node.js Developer
         </h2>
 
         {/* <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
           React Developer Node.js Developer
         </p> */}
-        <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
+        {/* <p className="italic text-zinc-500 dark:text-zinc-400 mb-2">
           <Typewriter
             words={["More Monkey, More fun."]}
             loop
@@ -75,7 +66,7 @@ export const HomeSection = () => {
             deleteSpeed={50}
             delaySpeed={1000}
           />
-        </p>
+        </p> */}
 
         <span
           className="inline-block text-sm font-medium px-3 py-1 rounded-full mt -2 mb-5 
@@ -110,7 +101,7 @@ export const HomeSection = () => {
           </div>
         </span>
 
-        <div className="flex justify-start items-center gap-10">
+        <div className="flex justify-center sm:justify-start items-center  gap-10">
           <a
             href="#projects"
             onClick={(e) => {
@@ -119,13 +110,14 @@ export const HomeSection = () => {
                 .querySelector("#projects")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-block px-6 py-3 bg-zinc-900 dark:bg-white text-white
-             dark:text-black rounded-lg font-medium hover:opacity-90 transition duration-300"
+            className=" px-6 py-3 bg-zinc-900 dark:bg-white text-white
+             dark:text-black rounded-lg font-medium hover:opacity-90 transition duration-300
+      "
           >
             View Projects
           </a>
           {/* Tech Stack Icons */}
-          <div className="flex gap-4 mt-6 justify-center md:justify-start">
+          {/* <div className="flex gap-4 mt-6 justify-center md:justify-start">
             {[
               {
                 icon: <SiReact className="text-blue-500 dark:text-blue-700" />,
@@ -166,7 +158,7 @@ export const HomeSection = () => {
                 {tech.icon}
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </motion.section>

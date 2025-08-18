@@ -1,14 +1,13 @@
 // Navbar.tsx
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
 import { throttle } from "../utils/setActiveThrottled";
 
 const sectionIds = ["home", "about", "projects"];
 
 export const Navbar = () => {
   const [active, setActive] = useState<string>("home");
-  const [menu, setMenu] = useState<boolean>(false);
+  const [_, setMenu] = useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -93,37 +92,21 @@ export const Navbar = () => {
 
        from-blue-50 via-white to-indigo-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 "
     >
-      <div className="flex justify-between items-center">
-        <div className="text-xl font-bold">{/* Yong's Portfolio */}</div>
-
-        <button
-          onClick={() => setMenu((prev) => !prev)}
-          className="md:hidden text-zinc-800 dark:text-zinc-100"
-        >
-          {menu ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        <div
-          className={`${
-            menu ? "block" : "hidden"
-          } md:flex md:space-x-6 space-y-2 md:space-y-0 absolute md:static
-              left-0 w-full md:w-auto top-16 md:top-auto px-6
-             md:px-0 py-4 md:py-0 transition`}
-        >
-          {sectionIds.map((id) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className={`capitalize transition text-left w-full md:w-auto tracking-widest ${
+      <div className="flex justify-center items-center sm:justify-end sm:gap-12 sm:pr-9 ">
+        {sectionIds.map((id) => (
+          <button
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className={`capitalize sm:uppercase select-none transition 
+              text-left w-20 md:w-auto tracking-widest focus:outline-none ${
                 active === id
                   ? "text-blue-600 font-bold"
                   : "hover:text-blue-400"
               }`}
-            >
-              {id}
-            </button>
-          ))}
-        </div>
+          >
+            {id}
+          </button>
+        ))}
       </div>
     </nav>
   );

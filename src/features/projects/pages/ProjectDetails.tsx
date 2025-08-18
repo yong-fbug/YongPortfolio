@@ -1,45 +1,57 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { projects } from "../data/project";
-import { ArrowLeftCircle, ChevronLeft, ChevronRight, XCircle } from "lucide-react";
+import {
+  ArrowLeftCircle,
+  ChevronLeft,
+  ChevronRight,
+  XCircle,
+} from "lucide-react";
 import { useState } from "react";
 
-
-
 export default function ProjectDetail() {
-  const [currentIndex, setcurrentIndex] = useState<number | null>(null)
+  const [currentIndex, setcurrentIndex] = useState<number | null>(null);
 
   const { id } = useParams();
   const project = projects.find((p) => p.id === Number(id));
 
-  if (!project) return (
-    <div className="p-10 text-center text-zinc-600 dark:text-zinc-300">
-      Project not found.
-    </div>
-  );
+  if (!project)
+    return (
+      <div className="p-10 text-center text-zinc-600 dark:text-zinc-300">
+        Project not found.
+      </div>
+    );
 
   const navigate = useNavigate();
 
-
   //Next and prev
   const goNext = () => {
-    if (currentIndex === null || !project.images) return null
-      setcurrentIndex((currentIndex + 1) % project.images.length);
-    
+    if (currentIndex === null || !project.images) return null;
+    setcurrentIndex((currentIndex + 1) % project.images.length);
   };
 
   const goPrev = () => {
-    if (currentIndex === null || !project.images) return null
-      setcurrentIndex((currentIndex - 1 + project.images.length) % project.images.length);
+    if (currentIndex === null || !project.images) return null;
+    setcurrentIndex(
+      (currentIndex - 1 + project.images.length) % project.images.length
+    );
   };
 
   return (
-    <div className="text-zinc-900 dark:text-zinc-100">  
+    <div
+      className={`bg-gradient-to-tr from-blue-50 via-white to-indigo-100
+     dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors`}
+    >
       <div className="max-w-4xl mx-auto px-6 py-30 ">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4 mb-6">
-          <ArrowLeftCircle onClick={() => navigate(-1)} className="cursor-arrow" />
-          <h1 className="text-2xl sm:text-2xl md:text-4xl lg:text-5xl
-          font-bold"> 
-            {project.title}       
+          <ArrowLeftCircle
+            onClick={() => navigate(-1)}
+            className="cursor-arrow"
+          />
+          <h1
+            className="text-2xl sm:text-2xl md:text-4xl lg:text-5xl
+          font-bold"
+          >
+            {project.title}
           </h1>
         </div>
         <p className="text-lg leading-relaxed mb-12">{project.content}</p>
@@ -64,27 +76,29 @@ export default function ProjectDetail() {
       </div>
 
       {currentIndex !== null && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50  backdrop-blur-sm z-50 
           flex items-center justify-center"
           onClick={() => setcurrentIndex(null)}
         >
-          <div className="relative flex items-center justify-center 
-          max-w-full max-h-hull p-4">
-            <img 
-              src={project.images?.[currentIndex]  ?? ""}
+          <div
+            className="relative flex items-center justify-center 
+          max-w-full max-h-hull p-4"
+          >
+            <img
+              src={project.images?.[currentIndex] ?? ""}
               alt={`Image ${currentIndex + 1}`}
               className="w-full max-w-[90%] max-h-[90%] md:max-w-[70%] md:max-h-[80%] rounded-lg"
               onClick={(e) => e.stopPropagation()} // to prevent closing when clicking the image
             />
-            <XCircle 
+            <XCircle
               onClick={() => setcurrentIndex(null)}
               className="absolute top-4 right-4 text-white w-8 h-8 cursor-pointer"
             />
 
             <button
-              onClick={(e) => { 
-                e.stopPropagation(); 
+              onClick={(e) => {
+                e.stopPropagation();
                 goPrev();
               }}
               className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold px-3 py-2 
@@ -93,9 +107,9 @@ export default function ProjectDetail() {
               <ChevronLeft />
             </button>
 
-            <button 
-              onClick={(e) => { 
-                e.stopPropagation(); 
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
                 goNext();
               }}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold px-3 py-2 

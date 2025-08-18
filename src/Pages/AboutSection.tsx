@@ -21,7 +21,7 @@ export const AboutSection = () => {
         delay: distance * 0.08,
       },
     }),
-    hover: { scale: 1.5 },
+    hover: { scale: 1.2 },
   };
 
   // const techList = Array.from(new Set(projects.flatMap((p) => p.stack || [])));
@@ -114,8 +114,9 @@ export const AboutSection = () => {
             <a
               download
               className="flex items-center justify-center gap-2 px-5 py-3 border
-               border-zinc-300 dark:border-zinc-700 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800
-                transition cursor-pointer mt-5"
+               border-zinc-300 dark:border-zinc-700 rounded-md
+                hover:bg-zinc-100 dark:hover:bg-zinc-800
+                transition cursor-pointer mt-5 text-sm"
               aria-label="Download Resume"
             >
               <Download className="w-5 h-5" />
@@ -128,14 +129,14 @@ export const AboutSection = () => {
         <div className="flex flex-col md:flex-row gap-4 mt-10 pb-30">
           {/* Internship card */}
           <div className="w-full md:w-96 rounded-xl p-4 shadow-lg border-2">
-            <h1 className="uppercase tracking-widest font-bold">
+            <h1 className="uppercase tracking-widest font-bold text-lg">
               Internship Experience
             </h1>
             <div className="mt-2 space-y-1">
-              <h2 className="font-medium">
+              <h2 className="font-medium text-base">
                 Information Technology Coordinator
               </h2>
-              <span className="text-sm">at Ravago Inc</span>
+              <span className="text-base">at Ravago Inc</span>
 
               <ul className="list-disc list-inside text-sm space-y-1 mt-2">
                 <li>IT support</li>
@@ -149,11 +150,11 @@ export const AboutSection = () => {
           {/* About me card */}
           <div className="shadow-lg border-2 flex-1 rounded-xl p-4 md:mr-80">
             <p className="uppercase tracking-widest font-bold">About me</p>
-            <h1 className="mt-2 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="mt-2 text-sm sm:text-base md:text-lg leading-relaxed">
               I am a web developer specializing in React, TypeScript, and the
               MERN stack with experience building inventory systems,
               authentication systems, and data dashboards.
-            </h1>
+            </p>
           </div>
         </div>
       </div>

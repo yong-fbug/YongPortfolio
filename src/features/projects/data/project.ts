@@ -44,6 +44,7 @@ export interface Project {
   content: string | undefined;
   className?: string;
   stack?: string[];
+  type: string;
 }
 
 export const projects: Project[] = [
@@ -68,6 +69,7 @@ export const projects: Project[] = [
       "CSS3",
       "XAMPP",
     ],
+    type: "Capstone Project",
   },
 
   {
@@ -89,6 +91,7 @@ export const projects: Project[] = [
     ],
     content: "Details about project..",
     stack: ["React"],
+    type: "Intern Project",
   },
   {
     id: 3,
@@ -99,6 +102,7 @@ export const projects: Project[] = [
     images: [_1, _2, _3, _4, _5, _6, _7, _8, _9, _10],
     content: "Details about project ..",
     stack: ["React", "GoogleAppscript"],
+    type: "Intern Project",
   },
   {
     id: 4,
@@ -117,6 +121,7 @@ export const projects: Project[] = [
     content:
       "A web application that helps businesses monitor their beverage inventory by tracking quantities, categories, and stock changes. Features include adding new items, updating stock, and generating alerts for low inventory.",
     stack: undefined,
+    type: "Personal Project",
   },
 
   {
@@ -140,5 +145,6 @@ export const projects: Project[] = [
       "Mongodb",
       "Mongoose",
     ],
+    type: "Personal Project",
   },
 ];
