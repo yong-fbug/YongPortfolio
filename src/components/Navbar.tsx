@@ -89,8 +89,9 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50
-     bg-white dark:bg-inherit px-6 py-4 shadow"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 shadow 
+
+       from-blue-50 via-white to-indigo-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 "
     >
       <div className="flex justify-between items-center">
         <div className="text-xl font-bold">{/* Yong's Portfolio */}</div>

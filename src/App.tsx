@@ -28,7 +28,7 @@ export default function App() {
   return (
     <div
       className="min-h-screen flex flex-col font-sans scroll-smooth
-      text-zinc-800 dark:text-zinc-100"
+      text-zinc-800 dark:text-zinc-100 dark:bg-zinc-500 bg-zinc-00"
     >
       <Navbar />
 

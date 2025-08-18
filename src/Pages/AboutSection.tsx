@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Background } from "../utils/Background";
-import { projects } from "../features/projects/data/project";
+// import { projects } from "../features/projects/data/project";
 import { techIcons } from "../features/projects/data/techIcon";
 import { techUrl } from "../features/projects/data/techUrl";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import Wanda from "../assets/wanda/WandaCrop.jpg";
 import WandaDigital from "../assets/wanda/wandaCute.png";
 
 export const AboutSection = () => {
-  const [hoverIcon, setHoverIcon] = useState<number | null>(null);
+  const [hoverIcon, setHoverIcon] = useState<string | null>(null);
   const [hoverWanda, setHoverWanda] = useState(false);
 
   const iconnVariants = {
@@ -24,7 +24,7 @@ export const AboutSection = () => {
     hover: { scale: 1.5 },
   };
 
-  const techList = Array.from(new Set(projects.flatMap((p) => p.stack || [])));
+  // const techList = Array.from(new Set(projects.flatMap((p) => p.stack || [])));
 
   return (
     <motion.section
@@ -44,9 +44,9 @@ export const AboutSection = () => {
             className="flex flex-row flex-wrap items-center justify-center h-auto 
           rounded-xl p-4 gap-6 sm:gap-12"
           >
-            {techList.map((tech, i) => (
+            {techIcons.map(({ name, icon: Icon, className }, index) => (
               <motion.div
-                key={i}
+                key={name}
                 className="relative group flex flex-col items-center"
               >
                 <motion.a
@@ -57,21 +57,28 @@ export const AboutSection = () => {
                   transition={{ type: "keyframes", stiffness: 300 }}
                 >
                   <motion.div
-                    custom={hoverIcon !== null ? Math.abs(hoverIcon - i) : 0}
+                    custom={
+                      hoverIcon
+                        ? Math.abs(
+                            index -
+                              techIcons.findIndex((t) => t.name === hoverIcon)
+                          )
+                        : 0
+                    }
                     variants={iconnVariants}
                     animate={
-                      hoverIcon === i
+                      hoverIcon === name
                         ? "hover"
                         : hoverIcon !== null
                         ? "wave"
                         : "idle"
                     }
-                    onHoverStart={() => setHoverIcon(i)}
+                    onHoverStart={() => setHoverIcon(name)}
                     onHoverEnd={() => setHoverIcon(null)}
-                    onDoubleClick={() => window.open(techUrl[tech], "_blank")}
+                    onDoubleClick={() => window.open(techUrl[name], "_blank")}
                     className="text-3xl cursor-pointer"
                   >
-                    {techIcons[tech]}
+                    <Icon className={className} />
                   </motion.div>
                 </motion.a>
 
@@ -80,7 +87,7 @@ export const AboutSection = () => {
                      group-hover:opacity-100 transition-opacity duration-200 pointer-events-none tracking-widest
                      select-none"
                 >
-                  {tech}
+                  {name}
                 </div>
               </motion.div>
             ))}
@@ -92,8 +99,13 @@ export const AboutSection = () => {
             w-full sm:w-72 md:w-80 max-w-full mx-auto md:mx-0 text-center"
           >
             <motion.img
+              key={hoverWanda ? "Wanda-real" : "Wanda Digita"}
               src={hoverWanda ? Wanda : WandaDigital}
               title="Wanda"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 0.4 }}
               onHoverStart={() => setHoverWanda(true)}
               onHoverEnd={() => setHoverWanda(false)}
               className="w-60 h-80 object-cover rounded border-2 overflow-hidden mx-auto"

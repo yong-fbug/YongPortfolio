@@ -1,28 +1,42 @@
 import {
-  SiCss3,
-  SiExpress,
-  SiGoogleappsscript,
+  SiReact,
   SiJavascript,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
   SiMongodb,
   SiMongoose,
-  SiNodedotjs,
   SiPhp,
-  SiReact,
-  SiTypescript,
   SiXampp,
+  SiCss3,
+  SiGoogleappsscript,
 } from "react-icons/si";
-import type { JSX } from "react";
+import { IconType } from "react-icons";
 
-export const techIcons: Record<string, JSX.Element> = {
-  React: <SiReact className="hover:text-cyan-400" />, // React blue-cyan
-  JavaScript: <SiJavascript className="hover:text-yellow-400" />, // JS yellow
-  TypeScript: <SiTypescript className="hover:text-blue-500" />, // TS blue
-  Nodejs: <SiNodedotjs className="hover:text-green-600" />, // Node green
-  Express: <SiExpress className="hover:text-gray-400" />, // Express gray
-  Mongodb: <SiMongodb className="hover:text-green-500" />, // Mongo green
-  Mongoose: <SiMongoose className="hover:text-red-600" />, // Mongoose red
-  PHP: <SiPhp className="hover:text-indigo-500" />, // PHP purple
-  XAMPP: <SiXampp className="hover:text-orange-500" />, // XAMPP orange
-  CSS3: <SiCss3 className="hover:text-blue-400" />, // CSS blue
-  GoogleAppscript: <SiGoogleappsscript className="hover:text-green-400" />, // Apps Script green
-};
+export interface Icon {
+  name: string;
+  icon: IconType;
+  className: string;
+}
+
+export const techIcons: Icon[] = [
+  { name: "React", icon: SiReact, className: "hover:text-cyan-400" },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    className: "hover:text-yellow-400",
+  },
+  { name: "TypeScript", icon: SiTypescript, className: "hover:text-blue-500" },
+  { name: "Node.js", icon: SiNodedotjs, className: "hover:text-green-600" },
+  { name: "Express", icon: SiExpress, className: "hover:text-gray-400" },
+  { name: "MongoDB", icon: SiMongodb, className: "hover:text-green-500" },
+  { name: "Mongoose", icon: SiMongoose, className: "hover:text-red-600" },
+  { name: "PHP", icon: SiPhp, className: "hover:text-indigo-500" },
+  { name: "XAMPP", icon: SiXampp, className: "hover:text-orange-500" },
+  { name: "CSS3", icon: SiCss3, className: "hover:text-blue-400" },
+  {
+    name: "Google Apps Script",
+    icon: SiGoogleappsscript,
+    className: "hover:text-green-400",
+  },
+];

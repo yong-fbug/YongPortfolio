@@ -78,10 +78,10 @@ export const HomeSection = () => {
         </p>
 
         <span
-          className="inline-block text-sm font-medium px-3 py-1 rounded-full mt-2 mb-5 
+          className="inline-block text-sm font-medium px-3 py-1 rounded-full mt -2 mb-5 
         select-none"
         >
-          <div className="flex gap-8 mb-8">
+          <div className="flex gap-8 mt-3.5">
             <a
               href="https://github.com/yong-fbug"
               target="_blank"
