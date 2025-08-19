@@ -83,7 +83,7 @@ export const HomeSection = () => {
           </div>
         </span>
 
-        <div className="flex justify-center sm:justify-start items-center gap-10 w-fit">
+        <div className="flex justify-center sm:justify-start items-center gap-10">
           <a
             href="#projects"
             onClick={(e) => {
@@ -92,8 +92,9 @@ export const HomeSection = () => {
                 .querySelector("#projects")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="view-btn relative px-6 py-3 bg-zinc-900 dark:bg-zinc-200 text-white dark:text-black
-             font-medium transition"
+            className="view-btn px-6 py-3 bg-zinc-900 dark:bg-white text-white
+             dark:text-black font-medium hover:opacity-90 transition duration-300
+      "
           >
             View Projects
           </a>
