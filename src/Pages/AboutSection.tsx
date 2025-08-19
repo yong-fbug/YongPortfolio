@@ -10,7 +10,7 @@ import WandaDigital from "../assets/wanda/wandaCute.png";
 
 export const AboutSection = () => {
   const [hoverIcon, setHoverIcon] = useState<string | null>(null);
-  const [hoverWanda, setHoverWanda] = useState(false);
+  const [hoverWanda, setHoverWanda] = useState<boolean>(false);
 
   const iconnVariants = {
     idle: { scale: 1 },
@@ -108,6 +108,7 @@ export const AboutSection = () => {
               transition={{ duration: 0.4 }}
               onHoverStart={() => setHoverWanda(true)}
               onHoverEnd={() => setHoverWanda(false)}
+              onClick={() => setHoverWanda((prev) => !prev)}
               className="w-60 h-80 object-cover rounded border-2 overflow-hidden mx-auto"
             />
 

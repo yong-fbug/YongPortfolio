@@ -89,8 +89,8 @@ export const Navbar = () => {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4 shadow 
-
-       from-blue-50 via-white to-indigo-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 "
+      bg-gradient-to-r from-blue-50 via-white to-indigo-100
+       dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
       <div className="flex justify-center items-center sm:justify-end sm:gap-12 sm:pr-9 ">
         {sectionIds.map((id) => (

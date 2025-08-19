@@ -32,13 +32,13 @@ export default function App() {
     >
       <Navbar />
 
-      <div className="flex-1">
+      <div className="flex-1 ">
         <ScrollToTop />
         <Routes>
           <Route
             path="/"
             element={
-              <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+              <main className="h-screen overflow-y-scroll snap-y snap-mandatory main-scroll-bar">
                 <HomeSection />
                 <AboutSection />
                 <ProjectsSection />

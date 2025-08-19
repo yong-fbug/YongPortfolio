@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { projects } from "../features/projects/data/project";
 import { Background } from "../utils/Background";
 import { getTheIcons } from "../utils/getTheIcons";
+import "../App.css"
 
 export const ProjectsSection = () => {
   return (
@@ -15,7 +16,7 @@ export const ProjectsSection = () => {
       transition={{ duration: 0.7 }}
     >
       {/* Inner scroll for project cards */}
-      <div className="flex-1 overflow-x-hidden overflow-y-auto scroll-smooth">
+      <div className="flex-1 overflow-x-hidden overflow-y-auto scroll-smooth scrollbar-hide">
         <div className="flex flex-col items-center">
           {projects.map(
             ({ id, title, description, imgSrc, stack, type }, index) => (
