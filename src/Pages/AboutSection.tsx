@@ -22,8 +22,6 @@ export const AboutSection = () => {
     hover: { scale: 1.2 },
   };
 
-  // const techList = Array.from(new Set(projects.flatMap((p) => p.stack || [])));
-
   return (
     <motion.section
       id="about"
@@ -106,6 +104,8 @@ export const AboutSection = () => {
               transition={{ duration: 0.4 }}
               onHoverStart={() => setHoverWanda(true)}
               onHoverEnd={() => setHoverWanda(false)}
+              onTapStart={() => setHoverIcon(Wanda)}
+              onTapCancel={() => setHoverWanda(false)}
               onClick={() => setHoverWanda((prev) => !prev)}
               className="w-60 h-80 object-cover rounded border-2 overflow-hidden mx-auto"
             />
