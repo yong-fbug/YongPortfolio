@@ -48,3 +48,26 @@ html {
   background-color: #9ca3af;
   border-radius: 9999px;
 }
+
+.view-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.view-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.view-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.dark .view-btn:hover::before {
+  border-color: #18181b;
+}

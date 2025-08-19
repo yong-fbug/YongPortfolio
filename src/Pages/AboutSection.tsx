@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Background } from "../utils/Background";
-// import { projects } from "../features/projects/data/project";
 import { techIcons } from "../features/projects/data/techIcon";
 import { techUrl } from "../features/projects/data/techUrl";
 import { useState } from "react";
@@ -30,7 +28,7 @@ export const AboutSection = () => {
     <motion.section
       id="about"
       className={`snap-start relative flex flex-col-reverse md:flex-row
-         items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 pt-20 ${Background}`}
+         items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 pt-20`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}

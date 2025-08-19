@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../features/projects/data/project";
-import { Background } from "../utils/Background";
 import { getTheIcons } from "../utils/getTheIcons";
-import "../App.css"
+import "../App.css";
 
 export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className={`snap-start relative h-screen flex flex-col px-6 pt-15 overflow-hidden ${Background}`}
+      className={`snap-start relative h-screen flex flex-col px-6 pt-25 overflow-hidden`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}

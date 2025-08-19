@@ -2,11 +2,19 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { throttle } from "../utils/setActiveThrottled";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 const sectionIds = ["home", "about", "projects"];
 
 export const Navbar = () => {
   const [active, setActive] = useState<string>("home");
+  const [switchMode, setSwitchMode] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("switchMode") === "true";
+    }
+    return false;
+  });
   const [_, setMenu] = useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -86,27 +94,45 @@ export const Navbar = () => {
     location.pathname,
   ]);
 
+  useEffect(() => {
+    if (switchMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("switchMode", switchMode.toString());
+  }, [switchMode]);
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4 shadow 
       bg-gradient-to-r from-blue-50 via-white to-indigo-100
        dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
-      <div className="flex justify-center items-center sm:justify-end sm:gap-12 sm:pr-9 ">
-        {sectionIds.map((id) => (
-          <button
-            key={id}
-            onClick={() => scrollToSection(id)}
-            className={`capitalize sm:uppercase select-none transition 
+      <div className="flex justify-between w-full items-center sm:gap-12 sm:pr-9 ">
+        <div className="flex mx-auto sm:gap-20">
+          {sectionIds.map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className={`capitalize sm:uppercase select-none transition 
               text-left w-20 md:w-auto tracking-widest focus:outline-none ${
                 active === id
                   ? "text-blue-600 font-bold"
                   : "hover:text-blue-400"
               }`}
-          >
-            {id}
-          </button>
-        ))}
+            >
+              {id}
+            </button>
+          ))}
+        </div>
+
+        <motion.div
+          onClick={() => setSwitchMode((prev) => !prev)}
+          className=" flex justify-end"
+        >
+          {switchMode ? <SunIcon /> : <MoonIcon />}
+        </motion.div>
       </div>
     </nav>
   );
