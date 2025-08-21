@@ -29,18 +29,18 @@ export default function App() {
   return (
     <div
       className="min-h-screen flex flex-col font-sans scroll-smooth
-      text-zinc-800 dark:text-zinc-100 dark:bg-zinc-500 bg-zinc-100"
+      text-zinc-800 dark:text-zinc-100 dark:bg-zinc-100 bg-zinc-100"
     >
       <div className={Background}>
         <Navbar />
 
-        <div className="flex-1 ">
+        <div className="flex-1 h-screen  overflow-y-scroll">
           <ScrollToTop />
           <Routes>
             <Route
               path="/"
               element={
-                <main className="h-screen overflow-y-scroll snap-y snap-mandatory main-scroll-bar">
+                <main className="snap-y snap-mandatory main-scroll-bar">
                   <HomeSection />
                   <AboutSection />
                   <ProjectsSection />

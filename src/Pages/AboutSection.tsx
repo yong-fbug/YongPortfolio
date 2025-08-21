@@ -3,12 +3,9 @@ import { techIcons } from "../features/projects/data/techIcon";
 import { techUrl } from "../features/projects/data/techUrl";
 import { useState } from "react";
 import { Download } from "lucide-react";
-import Wanda from "../assets/wanda/WandaCrop.jpg";
-import WandaDigital from "../assets/wanda/wandaCute.png";
 
 export const AboutSection = () => {
   const [hoverIcon, setHoverIcon] = useState<string | null>(null);
-  const [hoverWanda, setHoverWanda] = useState<boolean>(false);
 
   const iconnVariants = {
     idle: { scale: 1 },
@@ -32,112 +29,81 @@ export const AboutSection = () => {
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="w-full p-4 space-y-4">
-        {/* Top row */}
-        <div className="flex flex-col lg:flex-row gap-4">
-          {/* Tech stack */}
-          <div
-            className="flex flex-row flex-wrap items-center justify-center h-auto 
-          rounded-xl p-4 gap-6 sm:gap-12"
-          >
-            {techIcons.map(({ name, icon: Icon, className }, index) => (
-              <motion.div
-                key={name}
-                className="relative group flex flex-col items-center"
-              >
-                <motion.a
-                  rel="noopener noreferrer"
-                  className="text-3xl"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 1.2 }}
-                  transition={{ type: "keyframes", stiffness: 300 }}
-                >
-                  <motion.div
-                    custom={
-                      hoverIcon
-                        ? Math.abs(
-                            index -
-                              techIcons.findIndex((t) => t.name === hoverIcon)
-                          )
-                        : 0
-                    }
-                    variants={iconnVariants}
-                    animate={
-                      hoverIcon === name
-                        ? "hover"
-                        : hoverIcon !== null
-                        ? "wave"
-                        : "idle"
-                    }
-                    onHoverStart={() => setHoverIcon(name)}
-                    onHoverEnd={() => setHoverIcon(null)}
-                    onDoubleClick={() => window.open(techUrl[name], "_blank")}
-                    className="text-3xl cursor-pointer"
-                  >
-                    <Icon className={className} />
-                  </motion.div>
-                </motion.a>
-
-                <div
-                  className="absolute top-full mt-2 py-1 px-2 text-xs sm:text-sm text-white opacity-0
-                     group-hover:opacity-100 transition-opacity duration-200 pointer-events-none tracking-widest
-                     select-none"
-                >
-                  {name}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Resume / Cat */}
-          <div
-            className="relative md:absolute md:top-21 md:right-15 shadow-lg rounded-xl p-4 
-            w-full sm:w-72 md:w-80 max-w-full mx-auto md:mx-0 text-center"
-          >
-            <motion.img
-              key={hoverWanda ? "Wanda-real" : "Wanda Digita"}
-              src={hoverWanda ? Wanda : WandaDigital}
-              title="Wanda"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-              onHoverStart={() => setHoverWanda(true)}
-              onHoverEnd={() => setHoverWanda(false)}
-              onTapStart={() => setHoverIcon(Wanda)}
-              onTapCancel={() => setHoverWanda(false)}
-              onClick={() => setHoverWanda((prev) => !prev)}
-              className="w-60 h-80 object-cover rounded border-2 overflow-hidden mx-auto"
-            />
-
-            <a
-              download
-              className="flex items-center justify-center gap-2 px-5 py-3 border
-               border-zinc-300 dark:border-zinc-700 rounded-md
-                hover:bg-zinc-100 dark:hover:bg-zinc-800
-                transition cursor-pointer mt-5 text-sm"
-              aria-label="Download Resume"
+      <div className="w-full p-4 space-y-12">
+        {/* Tech stack */}
+        <div
+          className="flex flex-wrap items-center justify-center 
+          rounded-2xl  backdrop-blur-sm
+          shadow-md p-6 gap-6 sm:gap-10"
+        >
+          {techIcons.map(({ name, icon: Icon, className }, index) => (
+            <motion.div
+              key={name}
+              className="relative group flex flex-col items-center"
             >
-              <Download className="w-5 h-5" />
-              Download Resume
-            </a>
-          </div>
+              <motion.a
+                rel="noopener noreferrer"
+                className="text-3xl"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1.2 }}
+                transition={{ type: "keyframes", stiffness: 300 }}
+              >
+                <motion.div
+                  custom={
+                    hoverIcon
+                      ? Math.abs(
+                          index -
+                            techIcons.findIndex((t) => t.name === hoverIcon)
+                        )
+                      : 0
+                  }
+                  variants={iconnVariants}
+                  animate={
+                    hoverIcon === name
+                      ? "hover"
+                      : hoverIcon !== null
+                      ? "wave"
+                      : "idle"
+                  }
+                  onHoverStart={() => setHoverIcon(name)}
+                  onHoverEnd={() => setHoverIcon(null)}
+                  onDoubleClick={() => window.open(techUrl[name], "_blank")}
+                  className="text-3xl cursor-pointer"
+                >
+                  <Icon className={className} />
+                </motion.div>
+              </motion.a>
+
+              <div
+                className="absolute top-full mt-2 py-1 px-2 rounded-md
+                bg-black/80 text-white text-xs sm:text-sm opacity-0
+                group-hover:opacity-100 transition duration-300
+                pointer-events-none tracking-wide select-none"
+              >
+                {name}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Bottom Cards */}
-        <div className="flex flex-col md:flex-row gap-4 mt-10 pb-30">
+        <div className="flex flex-col md:flex-row gap-6">
           {/* Internship card */}
-          <div className="w-full md:w-96 rounded-xl p-4 shadow-lg border-2">
-            <h1 className="uppercase tracking-widest font-bold text-lg">
+          <div
+            className="w-full md:w-96 rounded-2xl p-6 shadow-lg border 
+          bg-white/80 dark:bg-zinc-900/40 backdrop-blur-sm 
+          hover:shadow-xl transition"
+          >
+            <h1 className="uppercase tracking-widest font-bold text-lg text-blue-600 dark:text-blue-400">
               Internship Experience
             </h1>
-            <div className="mt-2 space-y-1">
-              <h2 className="font-medium text-base">
+            <div className="mt-3 space-y-1">
+              <h2 className="font-semibold text-base">
                 Information Technology Coordinator
               </h2>
-              <span className="text-base">at Ravago Inc</span>
+              <span className="text-sm opacity-80">at Ravago Inc</span>
 
-              <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+              <ul className="list-disc list-inside text-sm space-y-1 mt-3">
                 <li>IT support</li>
                 <li>Hardware and software troubleshooting</li>
                 <li>AppScript and Appsheet</li>
@@ -147,13 +113,30 @@ export const AboutSection = () => {
           </div>
 
           {/* About me card */}
-          <div className="shadow-lg border-2 flex-1 rounded-xl p-4 md:mr-80">
-            <p className="uppercase tracking-widest font-bold">About me</p>
-            <p className="mt-2 text-sm sm:text-base md:text-lg leading-relaxed">
+          <div
+            className="flex-1 rounded-2xl p-6 shadow-lg border
+          bg-white/80 dark:bg-zinc-900/40 backdrop-blur-sm 
+          hover:shadow-xl transition"
+          >
+            <p className="uppercase tracking-widest font-bold text-lg text-blue-600 dark:text-blue-400">
+              About me
+            </p>
+            <p className="mt-3 text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               I am a web developer specializing in React, TypeScript, and the
               MERN stack with experience building inventory systems,
               authentication systems, and data dashboards.
             </p>
+            <a
+              download
+              className="flex items-center justify-center gap-2 px-5 py-3 border
+              border-zinc-300 dark:border-zinc-700 rounded-md font-medium
+              hover:bg-zinc-100 dark:hover:bg-zinc-800
+              transition mt-6 text-sm"
+              aria-label="Download Resume"
+            >
+              <Download className="w-5 h-5" />
+              Download Resume
+            </a>
           </div>
         </div>
       </div>

@@ -8,14 +8,14 @@ export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className={`snap-start relative h-screen flex flex-col px-6 pt-25 overflow-hidden`}
+      className={`snap-start relative h-screen flex flex-col px-6 pt-25 `}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.7 }}
     >
       {/* Inner scroll for project cards */}
-      <div className="flex-1 overflow-x-hidden overflow-y-auto scroll-smooth scrollbar-hide">
+      <div className="flex-1 overflow-y-auto scroll-smooth scrollbar-hide">
         <div className="flex flex-col items-center">
           {projects.map(
             ({ id, title, description, imgSrc, stack, type }, index) => (
@@ -27,6 +27,7 @@ export const ProjectsSection = () => {
               >
                 <Link
                   to={`/projects/${id}`}
+                  state={{ from: "projects" }}
                   className=" flex flex-col items-center gap-2"
                 >
                   <img

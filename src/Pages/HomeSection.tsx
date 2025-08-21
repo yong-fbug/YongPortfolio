@@ -8,7 +8,7 @@ export const HomeSection = () => {
     <motion.section
       id="home"
       className={`snap-center relative min-h-screen flex flex-col md:flex-row items-center justify-center
-         gap-6 md:gap-12 px-4 sm:px-6  md:px-16 pt-16 sm:pt-16
+         gap-6 md:gap-12 px-4 sm:px-6  md:px-16 pb-36  sm:pt-16
         overflow-x-hidden `}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -18,7 +18,7 @@ export const HomeSection = () => {
       {/* Right: Profile Image */}
       <motion.div
         className="z-10 w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 rounded-full overflow-hidden 
-        border-4  border-gray-300 dark:border-gray-700 shadow-lg mb-8 md:mb-20 select-none"
+        border-4  border-gray-300 dark:border-gray-700 shadow-lg mb-8 md:mb-2 select-none"
         initial={{ x: 30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -36,7 +36,7 @@ export const HomeSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className=" leading-tight mb-2">
+        <div className="leading-tight mb-2">
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               Hi, I'm Jaspher Flores
@@ -92,8 +92,8 @@ export const HomeSection = () => {
                 .querySelector("#projects")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="view-btn px-6 py-3 bg-zinc-900 dark:bg-white text-white
-             dark:text-black font-medium hover:opacity-90 transition duration-300
+            className="view-btn px-6 py-3 rounded bg-zinc-900 dark:bg-white text-white
+             dark:text-gray-950 hover:dark:text-gray-800 font-medium hover:opacity-90 transition duration-300
       "
           >
             View Projects

@@ -128,7 +128,7 @@ export const projects: Project[] = [
     id: 5,
     title: "PillPoint",
     description:
-      "A Inventory Management system with automatication process and with role-based support",
+      "An Inventory Management system with automatication process and with role-based support",
     imgSrc: undefined,
     images: undefined,
     content: "",

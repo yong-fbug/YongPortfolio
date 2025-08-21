@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { throttle } from "../utils/setActiveThrottled";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { Background } from "../utils/Background";
 
 const sectionIds = ["home", "about", "projects"];
 
@@ -105,35 +106,31 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 shadow 
-      bg-gradient-to-r from-blue-50 via-white to-indigo-100
-       dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
+      className={`flex items-center justify-center w-full z-50 px-6 py-4 shadow  `}
     >
-      <div className="flex justify-between w-full items-center sm:gap-12 sm:pr-9 ">
-        <div className="flex mx-auto sm:gap-20">
-          {sectionIds.map((id) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className={`capitalize sm:uppercase select-none transition 
+      <div className="flex mx-auto sm:gap-20">
+        {sectionIds.map((id) => (
+          <button
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className={`capitalize p-1 sm:uppercase select-none transition 
               text-left w-20 md:w-auto tracking-widest focus:outline-none ${
                 active === id
                   ? "text-blue-600 font-bold"
                   : "hover:text-blue-400"
               }`}
-            >
-              {id}
-            </button>
-          ))}
-        </div>
-
-        <motion.div
-          onClick={() => setSwitchMode((prev) => !prev)}
-          className=" flex justify-end"
-        >
-          {switchMode ? <SunIcon /> : <MoonIcon />}
-        </motion.div>
+          >
+            {id}
+          </button>
+        ))}
       </div>
+
+      <motion.div
+        onClick={() => setSwitchMode((prev) => !prev)}
+        className=" flex justify-end"
+      >
+        {switchMode ? <SunIcon /> : <MoonIcon />}
+      </motion.div>
     </nav>
   );
 };
