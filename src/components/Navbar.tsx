@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { throttle } from "../utils/setActiveThrottled";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { Background } from "../utils/Background";
 
 const sectionIds = ["home", "about", "projects"];
 
