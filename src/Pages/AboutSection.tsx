@@ -3,6 +3,7 @@ import { techIcons } from "../features/projects/data/techIcon";
 import { techUrl } from "../features/projects/data/techUrl";
 import { useState } from "react";
 import { Download } from "lucide-react";
+import resume from "../assets/resume-Jaspherflores.pdf";
 
 export const AboutSection = () => {
   const [hoverIcon, setHoverIcon] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export const AboutSection = () => {
     <motion.section
       id="about"
       className={`snap-start relative flex flex-col-reverse md:flex-row
-         items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 pt-20`}
+         items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
@@ -33,7 +34,7 @@ export const AboutSection = () => {
         {/* Tech stack */}
         <div
           className="flex flex-wrap items-center justify-center 
-          rounded-2xl  backdrop-blur-sm
+          rounded-2xl backdrop-blur-sm
           shadow-md p-6 gap-6 sm:gap-10"
         >
           {techIcons.map(({ name, icon: Icon, className }, index) => (
@@ -90,8 +91,8 @@ export const AboutSection = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Internship card */}
           <div
-            className="w-full md:w-96 rounded-2xl p-6 shadow-lg border 
-          bg-white/80 dark:bg-zinc-900/40 backdrop-blur-sm 
+            className="w-full md:w-96 rounded-2xl p-6 shadow-lg
+          backdrop-blur-sm 
           hover:shadow-xl transition"
           >
             <h1 className="uppercase tracking-widest font-bold text-lg text-blue-600 dark:text-blue-400">
@@ -114,8 +115,8 @@ export const AboutSection = () => {
 
           {/* About me card */}
           <div
-            className="flex-1 rounded-2xl p-6 shadow-lg border
-          bg-white/80 dark:bg-zinc-900/40 backdrop-blur-sm 
+            className="flex-1 rounded-2xl p-6 shadow-lg
+          backdrop-blur-sm 
           hover:shadow-xl transition"
           >
             <p className="uppercase tracking-widest font-bold text-lg text-blue-600 dark:text-blue-400">
@@ -128,13 +129,14 @@ export const AboutSection = () => {
             </p>
             <a
               download
-              className="flex items-center justify-center gap-2 px-5 py-3 border
+              href={resume}
+              className="flex items-center justify-start w-fit cursor-pointer gap-2 px-5 py-3 border
               border-zinc-300 dark:border-zinc-700 rounded-md font-medium
               hover:bg-zinc-100 dark:hover:bg-zinc-800
               transition mt-6 text-sm"
               aria-label="Download Resume"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-5 h-5 cursor-pointer select-none" />
               Download Resume
             </a>
           </div>
