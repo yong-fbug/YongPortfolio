@@ -7,7 +7,7 @@ export const HomeSection = () => {
   return (
     <motion.section
       id="home"
-      className={`snap-center relative min-h-screen flex flex-col md:flex-row items-center justify-center
+      className={`snap-center relative mx-auto min-h-screen flex flex-col md:flex-row items-center justify-center
          gap-6 md:gap-12 px-4 sm:px-6  md:px-16 pb-36 sm:pt-16
         overflow-x-hidden `}
       initial={{ opacity: 0 }}

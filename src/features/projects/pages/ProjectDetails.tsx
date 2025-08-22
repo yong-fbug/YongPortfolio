@@ -44,10 +44,14 @@ export default function ProjectDetail() {
       navigate("/");
     }
   };
+
   return (
-    <div className=" mx-auto px-6 py-30 ">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4 mb-6">
-        <ArrowLeftCircle onClick={handleBack} className="cursor-arrow" />
+    <div className="mx-auto px-6 py-28">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+        <ArrowLeftCircle
+          onClick={handleBack}
+          className="cursor-pointer hover:text-zinc-500"
+        />
         <h1 className="text-xl font-bold">{project.title}</h1>
       </div>
       <p className="text-lg leading-relaxed mb-12">{project.content}</p>
@@ -63,52 +67,53 @@ export default function ProjectDetail() {
                 src={src}
                 alt={`Gallery image ${index + 1}`}
                 onClick={() => setcurrentIndex(index)}
-                className="w-full h-auto object-cover rounded-lg shadow-md hover:scale-105 transition-transform"
+                className="w-full h-auto object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
               />
             ))}
           </div>
         </>
       )}
 
+      {/* Modal */}
       {currentIndex !== null && (
         <div
-          className="fixed inset-0 bg-black/50  backdrop-blur-sm z-50 
-          flex items-center justify-center"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center"
           onClick={() => setcurrentIndex(null)}
         >
-          <div
-            className="relative flex items-center justify-center 
-          max-w-full max-h-hull p-4"
-          >
+          <div className="relative flex items-center justify-center w-full h-full p-4">
             <img
               src={project.images?.[currentIndex] ?? ""}
               alt={`Image ${currentIndex + 1}`}
-              className="w-full max-w-[90%] max-h-[90%] md:max-w-[70%] md:max-h-[80%] rounded-lg"
-              onClick={(e) => e.stopPropagation()} // to prevent closing when clicking the image
-            />
-            <XCircle
-              onClick={() => setcurrentIndex(null)}
-              className="absolute top-4 right-4 text-white w-8 h-8 cursor-pointer"
+              className="max-w-[90vw] max-h-[80vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
             />
 
+            {/* Close */}
+            <XCircle
+              onClick={() => setcurrentIndex(null)}
+              className="absolute top-4 right-4 text-white w-8 h-8 cursor-pointer hover:text-red-400"
+            />
+
+            {/* Prev */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 goPrev();
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold px-3 py-2 
-              bg-black bg-opacity-50 rounded-full hover:bg-opacity-70"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 
+                bg-black/5 rounded-full hover:bg-black/20"
             >
               <ChevronLeft />
             </button>
 
+            {/* Next */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 goNext();
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold px-3 py-2 
-              bg-black bg-opacity-50 rounded-full hover:bg-opacity-70"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 
+                bg-black/5 rounded-full hover:bg-black/20"
             >
               <ChevronRight />
             </button>

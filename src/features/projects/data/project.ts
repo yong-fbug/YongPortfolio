@@ -120,7 +120,7 @@ export const projects: Project[] = [
     ],
     content:
       "A web application that helps businesses monitor their beverage inventory by tracking quantities, categories, and stock changes. Features include adding new items, updating stock, and generating alerts for low inventory.",
-    stack: undefined,
+    stack: ["React"],
     type: "Personal Project",
   },
 
@@ -131,7 +131,7 @@ export const projects: Project[] = [
       "An Inventory Management system with automatication process and with role-based support",
     imgSrc: undefined,
     images: undefined,
-    content: "",
+    content: "Still working with UI and other function.",
     stack: [
       // <SiReact />,
       // <SiExpress />,
