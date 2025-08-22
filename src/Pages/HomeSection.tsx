@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import myImage from "../assets/myImage/jaspherflores.jpeg";
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 import { MapPin } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 export const HomeSection = () => {
   return (
@@ -48,7 +49,15 @@ export const HomeSection = () => {
         </div>
 
         <h2 className="text-xl md:text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4">
-          React and Node.js Developer
+          <Typewriter
+            words={["React Developer", "Node.js Developer"]}
+            loop
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
         </h2>
         <span
           className="inline-block text-sm font-medium px-3 py-1 rounded-full mt -2 mb-5 
